@@ -1,7 +1,4 @@
-# server/server.py
-# Run: python server.py   (works inside server/ folder or from project root)
 import os, sys
-# allow running from server/ or project root by adding parent dir to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import socket
@@ -173,3 +170,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
