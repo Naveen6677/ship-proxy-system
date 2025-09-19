@@ -91,7 +91,7 @@ class ProxyHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
                 client_sock.sendall(data)
 
 
-# ============ Run Server ============
+
 def run_server(host, port):
     with socketserver.ThreadingTCPServer((host, port), ProxyHTTPRequestHandler) as httpd:
         print(f"[Ship Proxy] Listening on {host}:{port}")
@@ -101,7 +101,7 @@ def run_server(host, port):
             print("\n[Ship Proxy] Shutting down.")
 
 
-# ============ Entry Point ============
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Ship Proxy Server")
     parser.add_argument("--host", default="127.0.0.1", help="Host to bind")
@@ -109,4 +109,5 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     run_server(args.host, args.port)
+
 
